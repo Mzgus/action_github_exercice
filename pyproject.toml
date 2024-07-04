@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "action-project"
+version = "0.1.0"
+description = ""
+authors = ["Mzgus <146324243+Mzgus@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.2.2"
+playwright = "^1.45.0"
+ruff = "^0.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
