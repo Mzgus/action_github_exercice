@@ -44,9 +44,7 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: |
-        poetry install --no-interaction --no-root
-        playwright install --with-deps
+        run: poetry install --no-interaction --no-root
       #----------------------------------------------
       # install your root project, if required
       #----------------------------------------------
@@ -58,4 +56,5 @@ jobs:
       - name: Run tests
         run: |
           source $(poetry env info --path)/bin/activate
+          playwright install --with-deps
           pytest tests/
