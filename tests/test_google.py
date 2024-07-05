@@ -3,7 +3,7 @@ from playwright.sync_api._generated import ElementHandle
 
 
 def test_example(playwright: Playwright) -> None:
-    try :
+    # try :
         browser = playwright.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
@@ -13,6 +13,6 @@ def test_example(playwright: Playwright) -> None:
         expect(page.get_by_role("img", name="Google")).to_be_visible()
         browser.close()
 
-    except Exception as e:
-        print(f"Error: {e}")
+    # except Exception as e:
+    #     print(f"Error: {e}")
         # page.screenshot(path="failur_screenshot.png")
