@@ -11,7 +11,7 @@ def test_example(playwright: Playwright) -> None:
         locator.click()
         expect(page.get_by_role("img", name="Google")).to_be_visible()
         browser.close()
-
+        assert True
     except Exception as e:
         print(f"Error: {e}")
         assert False
