@@ -10,6 +10,7 @@ def test_example(playwright: Playwright) -> None:
         # locator: ElementHandle | None = page.wait_for_selector("#L2AGLb")
         # locator.click()
         expect(page.get_by_role("img", name="Google")).to_be_visible()
+        expect(page.get_by_role("button", name="Recherche Google")).to_be_visible()
         browser.close()
         assert True
 
