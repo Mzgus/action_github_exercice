@@ -7,11 +7,13 @@ def test_example(playwright: Playwright) -> None:
         context = browser.new_context()
         page = context.new_page()
         page.goto("https://www.google.com/")
-        locator: ElementHandle | None = page.query_selector("#L2AGLb")
+        locator: ElementHandle | None = page.wait_for_selector("#L2AGLb")
         locator.click()
         expect(page.get_by_role("img", name="Google")).to_be_visible()
+        page.pause()
         browser.close()
         assert True
+
     except Exception as e:
         print(f"Error: {e}")
         assert False
