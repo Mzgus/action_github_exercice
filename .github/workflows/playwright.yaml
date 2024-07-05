@@ -53,10 +53,8 @@ jobs:
       #----------------------------------------------
       #              run test suite
       #----------------------------------------------
-      # source $(poetry env info --path)/bin/activate
       - name: Run tests
         run: |
-          source .venv/bin/activate
+          source $(poetry env info --path)/bin/activate
           playwright install --with-deps
           pytest tests/
-          coverage report
