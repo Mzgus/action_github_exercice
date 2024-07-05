@@ -1,7 +1,6 @@
 from playwright.sync_api import Page, expect, Playwright
 from playwright.sync_api._generated import ElementHandle
 
-
 def test_example(playwright: Playwright) -> None:
     try :
         browser = playwright.chromium.launch(headless=True)
