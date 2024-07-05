@@ -14,4 +14,4 @@ def test_example(playwright: Playwright) -> None:
 
     except Exception as e:
         print(f"Error: {e}")
-        # page.screenshot(path="failur_screenshot.png")
+        assert False
